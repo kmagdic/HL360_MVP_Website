@@ -1,0 +1,40 @@
+# FlexQ
+
+> FlexQ is a hybrid mental health platform that acts as a continuous signal layer between therapy sessions — for patients, therapists, and employers.
+
+Tagline: "Intervention before escalation."
+
+## What FlexQ does
+
+FlexQ bridges the gap between therapy sessions. Patients complete a 60-second daily check-in. Therapists see a structured dashboard of how each client is trending against their own personal baseline. Employers receive anonymised, aggregate workforce mental health indicators — never individual data.
+
+The product is not a mood tracker or a wellness app. It is a clinical signal layer that surfaces deterioration before it becomes a crisis.
+
+## Who it is for
+
+**Patients and employees** — A 60-second daily check-in (mood, energy, stress, sleep). Responses are compared to the individual's own rolling 7-day baseline, not a population norm. Reflections are private and never shared with an employer.
+
+**Therapists and clinicians** — A dashboard showing trend vs. baseline for every client. Flags appear when a client crosses a risk threshold (sustained deterioration ≥5 days, missed check-ins, emerging patterns). Three decisions per flag: acknowledge and adapt the care plan, acknowledge only, or dismiss. The ACE (Adaptive Care Engine) drafts care plan adjustments — the therapist approves, modifies, or rejects. Every action is audit-logged.
+
+**Employers and HR** — A leading indicator of workforce mental strain, not a wellness app. HR sees only anonymised aggregate data (minimum group size: 50). Individual identities, scores, reflections, and any subgroup under 50 people are architecturally inaccessible to employers — this is enforced at the database query layer, not by policy.
+
+## Key concepts
+
+- **Signal card** — the UI showing a patient's recent trend vs. their personal baseline
+- **ACE (Adaptive Care Engine)** — AI that drafts care plan changes; the therapist always decides
+- **Baseline** — rolling 7-day average of a patient's own self-reports; comparison is always self vs. self, never population
+- **Persistence flag** — raised when a client is ≥5 days above their usual range
+- **Sustained deviation** — ≥14 days of deviation triggers a stronger flag
+- **n ≥ 50** — the minimum group size for any employer aggregate view; enforced in code
+
+## Privacy and compliance
+
+FlexQ is GDPR and HIPAA compliant by design. Clinical data (health data under GDPR Art. 9) is processed only with explicit, freely-given consent separate from any employment relationship. Employers cannot access individual data under any configuration.
+
+This marketing site collects only: anonymised Google Analytics data (with consent) and email addresses from demo requests (on submission only).
+
+## Contact and demo
+
+To request a demo or learn more: https://flexq.health
+
+For privacy questions: privacy@flexq.health
