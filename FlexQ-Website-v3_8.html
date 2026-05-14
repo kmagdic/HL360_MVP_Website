@@ -234,6 +234,26 @@ footer a:hover{color:rgba(255,255,255,.55)}
   .screen-content{transform:scale(0.22)!important}
 }
 
+/* ══ COOKIE BANNER ══ */
+#cookie-banner{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  z-index:9999;background:var(--dark);border-radius:12px;
+  padding:18px 22px;display:none;align-items:center;gap:20px;flex-wrap:wrap;
+  max-width:640px;width:calc(100% - 48px);
+  box-shadow:0 4px 32px rgba(0,0,0,.22);font-size:13.5px;line-height:1.5
+}
+#cookie-banner p{flex:1;color:rgba(255,255,255,.55);min-width:180px;margin:0}
+#cookie-banner p a{color:var(--accent-l);text-decoration:none;cursor:pointer}
+#cookie-banner p a:hover{text-decoration:underline}
+.cb-btns{display:flex;gap:8px;flex-shrink:0}
+.cb-accept{background:var(--accent);color:#fff;border:none;padding:9px 18px;border-radius:7px;
+  font-size:13.5px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:opacity .15s}
+.cb-accept:hover{opacity:.88}
+.cb-decline{background:transparent;color:rgba(255,255,255,.45);
+  border:1px solid rgba(255,255,255,.15);padding:9px 18px;border-radius:7px;
+  font-size:13.5px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .15s}
+.cb-decline:hover{color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.3)}
+
 /* ══ NEW SCREEN DESIGN TOKENS ══ */
 :root {
   --paper:#fbf9f4; --paper-2:#f5f2eb; --paper-3:#edeae1;
@@ -399,7 +419,7 @@ footer a:hover{color:rgba(255,255,255,.55)}
   </div>
   <footer>
     <span>© 2026 FlexQ Health</span>
-    <div style="display:flex;gap:20px"><a href="#">Privacy · GDPR / HIPAA</a><a href="#">The science</a><a href="#">The team</a><a href="#">Not a medical device · v2.4</a></div>
+    <div style="display:flex;gap:20px"><a onclick="showPage('privacy')" style="cursor:pointer">Privacy · GDPR / HIPAA</a><a href="#">The science</a><a href="#">The team</a><a href="#">Not a medical device · v2.4</a></div>
   </footer>
 </div>
 
@@ -485,7 +505,7 @@ footer a:hover{color:rgba(255,255,255,.55)}
   </div>
   <footer>
     <span>© 2026 FlexQ Health</span>
-    <div style="display:flex;gap:20px"><a href="#">Privacy · GDPR / HIPAA</a><a href="#">The science</a><a href="#">The team</a></div>
+    <div style="display:flex;gap:20px"><a onclick="showPage('privacy')" style="cursor:pointer">Privacy · GDPR / HIPAA</a><a href="#">The science</a><a href="#">The team</a></div>
   </footer>
 </div>
 
@@ -530,8 +550,203 @@ footer a:hover{color:rgba(255,255,255,.55)}
 
   <footer>
     <span>© 2026 FlexQ Health</span>
-    <div style="display:flex;gap:20px"><a href="#">Privacy · GDPR / HIPAA</a><a href="#">The science</a><a href="#">The team</a><a href="#">Aggregate only · n ≥ 50</a></div>
+    <div style="display:flex;gap:20px"><a onclick="showPage('privacy')" style="cursor:pointer">Privacy · GDPR / HIPAA</a><a href="#">The science</a><a href="#">The team</a><a href="#">Aggregate only · n ≥ 50</a></div>
   </footer>
+</div>
+
+<!-- ════ PRIVACY ════ -->
+<div id="page-privacy" class="page">
+
+  <!-- Hero -->
+  <div style="background:var(--dark);padding:88px 48px 72px">
+    <div class="w">
+      <div class="eyebrow" style="color:var(--accent)">Legal · Data protection</div>
+      <h1 class="serif" style="font-size:clamp(44px,5.5vw,68px);color:var(--c);margin-bottom:20px">Privacy<br><em>policy.</em></h1>
+      <p style="font-size:17px;color:rgba(255,255,255,.48);max-width:520px;line-height:1.65;font-weight:300;margin-bottom:28px">This marketing site uses Google Analytics and collects your email address only if you choose to share it. That's it.</p>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <span style="font-size:12px;font-family:ui-monospace,'SF Mono',monospace;color:rgba(255,255,255,.3)">Last updated: 14 May 2026</span>
+        <span style="font-size:12px;font-family:ui-monospace,'SF Mono',monospace;color:rgba(255,255,255,.3)">Version 1.0</span>
+        <span style="font-size:12px;font-family:ui-monospace,'SF Mono',monospace;color:rgba(255,255,255,.3)">GDPR · AZOP compliant</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="pad" style="background:var(--c)">
+    <div class="w">
+      <div style="max-width:680px">
+
+        <!-- 01 Who we are -->
+        <section style="margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid var(--border)">
+          <div class="eyebrow">01</div>
+          <h2 class="serif" style="font-size:28px;margin-bottom:16px">Who we are</h2>
+          <p style="font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:14px"><strong style="color:var(--dark);font-weight:500">FlexQ Health</strong> ("FlexQ", "we", "us") is the data controller for this marketing website. We operate a hybrid mental health platform — this page covers the marketing site only, not the platform itself.</p>
+          <div style="border:1px solid var(--border);border-radius:10px;padding:20px 24px;font-size:13.5px;color:var(--mid);line-height:1.7">
+            Questions: <a href="mailto:privacy@flexq.health" style="color:var(--accent);text-decoration:none;font-weight:500">privacy@flexq.health</a> — we respond within 30 days.
+          </div>
+        </section>
+
+        <!-- 02 What we collect -->
+        <section style="margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid var(--border)">
+          <div class="eyebrow">02</div>
+          <h2 class="serif" style="font-size:28px;margin-bottom:16px">What we collect</h2>
+          <p style="font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:28px">We collect data in two ways only.</p>
+
+          <div class="g2" style="margin-bottom:0">
+            <div class="cell">
+              <div style="font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--light);margin-bottom:12px">Google Analytics 4</div>
+              <p style="font-size:13.5px;color:var(--mid);line-height:1.75;margin-bottom:12px">When you accept analytics cookies, Google Analytics collects anonymised data about your visit: pages viewed, time on site, approximate country, device type, and referring source.</p>
+              <p style="font-size:13.5px;color:var(--mid);line-height:1.75;margin-bottom:12px">IP addresses are anonymised before storage. No data is linked to your identity. We use this to understand which parts of the site are useful.</p>
+              <p style="font-size:12px;color:var(--light)">Google LLC, USA — governed by Standard Contractual Clauses under GDPR Art. 46(2)(c). No analytics cookies are set before you consent.</p>
+            </div>
+            <div class="cell">
+              <div style="font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--light);margin-bottom:12px">Email address</div>
+              <p style="font-size:13.5px;color:var(--mid);line-height:1.75;margin-bottom:12px">If you submit a demo request or join the waitlist, we collect your email address and the message you choose to send. Nothing else.</p>
+              <p style="font-size:13.5px;color:var(--mid);line-height:1.75;margin-bottom:12px">We use your email to respond to your enquiry and, with your agreement, to send occasional product updates. You can unsubscribe from updates at any time via the link in any email we send.</p>
+              <p style="font-size:12px;color:var(--light)">We do not share your email with any third party. We do not sell data.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 Legal basis & cookies -->
+        <section style="margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid var(--border)">
+          <div class="eyebrow">03</div>
+          <h2 class="serif" style="font-size:28px;margin-bottom:16px">Legal basis &amp; your choices</h2>
+
+          <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:28px">
+            <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--border);gap:1px">
+              <div style="background:var(--c);padding:10px 16px;font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--light)">Processing activity</div>
+              <div style="background:var(--c);padding:10px 16px;font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--light)">Legal basis</div>
+              <div style="background:var(--c);padding:10px 16px;font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--light)">GDPR reference</div>
+            </div>
+            <div style="background:var(--border);display:flex;flex-direction:column;gap:1px">
+              <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:1px;background:var(--border)">
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--dark)">Google Analytics cookies</div>
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--mid)">Consent</div>
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--mid)">Art. 6(1)(a)</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:1px;background:var(--border)">
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--dark)">Demo request / email enquiry</div>
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--mid)">Pre-contractual steps</div>
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--mid)">Art. 6(1)(b)</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:1px;background:var(--border)">
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--dark)">Product updates (newsletter)</div>
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--mid)">Consent</div>
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--mid)">Art. 6(1)(a)</div>
+              </div>
+            </div>
+          </div>
+
+          <h3 style="font-family:'Newsreader',serif;font-size:18px;font-style:italic;font-weight:400;margin-bottom:12px;color:var(--dark)">Managing cookies</h3>
+          <p style="font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:12px">No non-essential cookies are placed before you give consent via the cookie banner. You can change your preference at any time by clearing cookies in your browser settings and revisiting the site.</p>
+          <p style="font-size:15px;color:var(--mid);line-height:1.75">You can also opt out of Google Analytics across all sites by installing the <a href="https://tools.google.com/dlpage/gaoptout" style="color:var(--accent);text-decoration:none" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+        </section>
+
+        <!-- 04 Retention -->
+        <section style="margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid var(--border)">
+          <div class="eyebrow">04</div>
+          <h2 class="serif" style="font-size:28px;margin-bottom:16px">How long we keep your data</h2>
+
+          <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden">
+            <div style="display:grid;grid-template-columns:1.4fr 1fr;background:var(--border);gap:1px">
+              <div style="background:var(--c);padding:10px 16px;font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--light)">Data</div>
+              <div style="background:var(--c);padding:10px 16px;font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--light)">Retention</div>
+            </div>
+            <div style="background:var(--border);display:flex;flex-direction:column;gap:1px">
+              <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:1px;background:var(--border)">
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--dark)">Google Analytics data</div>
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--mid)">26 months (GA4 default)</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:1px;background:var(--border)">
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--dark)">Email address (demo / enquiry)</div>
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--mid)">Until you request deletion</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:1px;background:var(--border)">
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--dark)">Email address (newsletter)</div>
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--mid)">Until you unsubscribe or request deletion</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:1px;background:var(--border)">
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--dark)">Consent records</div>
+                <div style="background:var(--white);padding:13px 16px;font-size:13.5px;color:var(--mid)">3 years after withdrawal — Art. 7(1) GDPR</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 05 Your rights -->
+        <section style="margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid var(--border)">
+          <div class="eyebrow">05</div>
+          <h2 class="serif" style="font-size:28px;margin-bottom:16px">Your rights</h2>
+          <p style="font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:28px">Under GDPR (Uredba EU 2016/679) and the Croatian Data Protection Act (NN 42/2018) you have the following rights. To exercise any of them, email <a href="mailto:privacy@flexq.health" style="color:var(--accent);text-decoration:none">privacy@flexq.health</a> — we respond within 30 days.</p>
+          <div class="g2">
+            <div class="cell">
+              <div style="font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.08em;color:var(--light);margin-bottom:8px">Art. 15</div>
+              <h4 style="font-size:14.5px;font-weight:500;margin-bottom:6px">Access</h4>
+              <p style="font-size:13px;color:var(--mid);line-height:1.65">Request a copy of all personal data we hold about you.</p>
+            </div>
+            <div class="cell">
+              <div style="font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.08em;color:var(--light);margin-bottom:8px">Art. 16</div>
+              <h4 style="font-size:14.5px;font-weight:500;margin-bottom:6px">Rectification</h4>
+              <p style="font-size:13px;color:var(--mid);line-height:1.65">Ask us to correct inaccurate data we hold about you.</p>
+            </div>
+            <div class="cell">
+              <div style="font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.08em;color:var(--light);margin-bottom:8px">Art. 17</div>
+              <h4 style="font-size:14.5px;font-weight:500;margin-bottom:6px">Erasure</h4>
+              <p style="font-size:13px;color:var(--mid);line-height:1.65">Ask us to delete your email address and any associated data at any time.</p>
+            </div>
+            <div class="cell">
+              <div style="font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.08em;color:var(--light);margin-bottom:8px">Art. 7(3)</div>
+              <h4 style="font-size:14.5px;font-weight:500;margin-bottom:6px">Withdraw consent</h4>
+              <p style="font-size:13px;color:var(--mid);line-height:1.65">Withdraw consent for analytics or newsletter at any time, with immediate effect.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:24px;border:1px solid var(--border);border-radius:10px;padding:20px 24px">
+            <div style="font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--light);margin-bottom:10px">Supervisory authorities</div>
+            <p style="font-size:13.5px;color:var(--mid);line-height:1.75;margin-bottom:12px">You may file a complaint with your national data protection authority at any time — without contacting us first.</p>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="font-size:13.5px;color:var(--dark)"><strong style="font-weight:500">Croatia:</strong> <span style="color:var(--mid)">Agencija za zaštitu osobnih podataka (AZOP) — azop.hr</span></div>
+              <div style="font-size:13.5px;color:var(--dark)"><strong style="font-weight:500">EU / EEA:</strong> <span style="color:var(--mid)">Your national DPA — edpb.europa.eu/about-edpb/board/members</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 06 Contact -->
+        <section>
+          <div class="eyebrow">06</div>
+          <h2 class="serif" style="font-size:28px;margin-bottom:16px">Contact</h2>
+          <p style="font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:20px">For any question about this policy or a data subject request:</p>
+          <div style="border:1px solid var(--border);border-radius:10px;padding:24px;font-size:15px">
+            <a href="mailto:privacy@flexq.health" style="color:var(--accent);text-decoration:none;font-weight:500;font-size:16px">privacy@flexq.health</a>
+            <p style="font-size:12px;color:var(--light);margin-top:8px;margin-bottom:0">We respond within 30 days as required by GDPR Art. 12(3).</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 FlexQ Health</span>
+    <div style="display:flex;gap:20px">
+      <a onclick="showPage('landing')" style="cursor:pointer">Home</a>
+      <a href="mailto:privacy@flexq.health">privacy@flexq.health</a>
+      <span style="color:rgba(255,255,255,.2)">v1.0 · 14 May 2026</span>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ════ COOKIE CONSENT BANNER ════ -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use Google Analytics to understand how visitors use this site. No personal data is identified.
+    <a onclick="showPage('privacy')">Privacy policy</a>
+  </p>
+  <div class="cb-btns">
+    <button class="cb-decline" onclick="cookieChoice(false)">Only essential</button>
+    <button class="cb-accept" onclick="cookieChoice(true)">Accept analytics</button>
+  </div>
 </div>
 
 <script>
@@ -542,11 +757,38 @@ function showPage(name){
   const n=document.getElementById('nav-'+name);
   if(n) n.classList.add('active');
   window.scrollTo(0,0);
-  // close mobile menu
   const ham=document.querySelector('.ham');
   const nl=document.querySelector('.nav-links');
   if(ham){ham.classList.remove('open');nl.classList.remove('open')}
 }
+
+// ── Cookie consent & conditional GA4 load ──
+// Replace G-XXXXXXXXXX with your real GA4 Measurement ID
+var GA_ID='G-XXXXXXXXXX';
+
+function loadGA(){
+  var s=document.createElement('script');
+  s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+  document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag=gtag;
+  gtag('js',new Date());
+  gtag('config',GA_ID,{anonymize_ip:true});
+}
+
+function cookieChoice(accept){
+  localStorage.setItem('flexq_cookies',accept?'yes':'no');
+  document.getElementById('cookie-banner').style.display='none';
+  if(accept) loadGA();
+}
+
+(function(){
+  var c=localStorage.getItem('flexq_cookies');
+  if(!c) document.getElementById('cookie-banner').style.display='flex';
+  else if(c==='yes') loadGA();
+})();
 </script>
 </body>
 </html>
