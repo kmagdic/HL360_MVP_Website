@@ -1,33 +1,178 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlexQ — Intervention before escalation</title>
+<meta name="description" content="Continuous mental health signal layer between therapy sessions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
 </head>
-
 <body>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
+<nav>
+  <div class="logo" onclick="location.href='index.html'" style="cursor:pointer">
+    <div class="logo-icon">Fq</div>FlexQ
+  </div>
+  <button class="ham" onclick="toggleHam()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a id="nav-landing" href="index.html" data-i18n="nav.home">Home</a>
+    <a id="nav-therapists" href="therapists.html" data-i18n="nav.therapists">For therapists</a>
+    <a id="nav-enterprise" href="enterprise.html" data-i18n="nav.enterprise">For enterprises</a>
+    <a onclick="openContact()" class="nav-cta" data-i18n="nav.contact">Contact us</a>
+  </div>
+</nav>
 
+<!-- Full-width image banner -->
+  <div style="position:relative;width:100%;height:clamp(220px,26vw,360px);overflow:hidden;margin-top:0">
+    <img src="img/work.jpg" alt="Healthy mind, empowered human being" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(46,44,40,.18) 0%, rgba(46,44,40,.62) 100%)"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:44px">
+      <div style="max-width:1196px;margin:0 auto;width:100%;padding:0 48px">
+        <h2 style="font-family:'Newsreader',serif;font-size:clamp(32px,5.5vw,72px);font-weight:300;font-style:italic;color:#fff;line-height:1.1;margin-bottom:12px">Healthy mind,<br>empowered human being.</h2>
+        <p style="font-size:clamp(14px,1.6vw,19px);color:rgba(255,255,255,.7);font-weight:300;letter-spacing:.01em">Continuous hybrid care — at the right moment.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY -->
+  <div class="why-band" style="background:var(--c);color:var(--dark)">
+    <div class="w">
+      <div class="eyebrow" style="color:var(--accent)" data-i18n="prob.eyebrow">The problem</div>
+      <h2 class="serif" style="font-size:clamp(36px,4vw,54px);margin-bottom:56px">Too late, too formal,<br><em>too far away.</em></h2>
+      <div class="why-stats" style="background:var(--border)">
+        <div class="why-stat" style="background:var(--c)"><div class="why-num">8–11</div><div class="why-desc" style="color:var(--mid)">Years pass on average between the first symptoms of a mental health condition and a formal diagnosis. By then, the window for early intervention has long closed.</div></div>
+        <div class="why-stat" style="background:var(--c)"><div class="why-num">White coat</div><div class="why-desc" style="color:var(--mid)">Syndrome. In a clinical setting, people perform wellness. How someone presents in a therapist's office rarely reflects what the previous two weeks actually felt like.</div></div>
+        <div class="why-stat" style="background:var(--c)"><div class="why-num" data-i18n="prob.stat3.num">Most</div><div class="why-desc" style="color:var(--mid)">People experiencing significant mental strain never seek help — not because support is unavailable, but because the entry cost feels too high and the timing never feels right.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow" data-i18n="hero.eyebrow">Hybrid Mental Health Platform</div>
+      <h1 class="hero-h1" data-i18n-html="hero.h1">Intervention<br><em>before</em><br>escalation.</h1>
+      <p class="hero-sub">FlexQ continuously tracks and supports mental health — turning small daily signals into early warning, so therapists can act before a crisis forces the issue.</p>
+      <div class="hero-actions">
+        <button class="btn btn-dark" onclick="openContact()" data-i18n="cta.demo">Request a clinical demo</button>
+        <button class="btn btn-ghost" onclick="showPage('therapists')" data-i18n="hero.cta2">See how it works →</button>
+      </div>
+      <div class="hero-trust">
+        <span data-i18n="hero.trust">Therapist remains decision-maker</span>
+      </div>
+    </div>
+    <div>
+      <div class="sig-card">
+        <div class="sig-header">
+          <div>
+            <div class="sig-meta">Marie S. · Apr 1 – May 14, 2025</div>
+            <div class="sig-title">Above usual range</div>
+          </div>
+          <div class="risk-pill"><div class="risk-dot"></div>Emerging risk</div>
+        </div>
+        <svg viewBox="0 0 420 110" width="100%" height="110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-bottom:12px">
+          <defs>
+            <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#cc7722" stop-opacity=".18"/>
+              <stop offset="100%" stop-color="#cc7722" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="14" x2="420" y2="14" stroke="#e8e4db" stroke-width=".8"/>
+          <line x1="0" y1="50" x2="420" y2="50" stroke="#e8e4db" stroke-width=".8"/>
+          <line x1="0" y1="86" x2="420" y2="86" stroke="#e8e4db" stroke-width=".8"/>
+          <rect x="0" y="52" width="420" height="18" fill="#f0ebe1" rx="1"/>
+          <line x1="0" y1="61" x2="420" y2="61" stroke="#c4a882" stroke-width="1.2" stroke-dasharray="5,3"/>
+          <text x="2" y="59" font-size="8" fill="#c4a882" font-family="DM Sans,sans-serif">BASELINE 51</text>
+          <text x="2" y="11" font-size="8" fill="#a09d98" font-family="DM Sans,sans-serif">HIGH</text>
+          <text x="2" y="100" font-size="8" fill="#a09d98" font-family="DM Sans,sans-serif">LOW</text>
+          <line x1="360" y1="10" x2="360" y2="90" stroke="#cc7722" stroke-width="1" stroke-dasharray="3,3" opacity=".7"/>
+          <text x="363" y="13" font-size="8" fill="#cc7722" font-family="DM Sans,sans-serif">⚑ Flag</text>
+          <path d="M30,72 C70,70 110,65 150,58 C190,51 230,42 270,30 C300,22 330,16 360,12 L360,90 L30,90 Z" fill="url(#tg)"/>
+          <path d="M30,72 C70,70 110,65 150,58 C190,51 230,42 270,30 C300,22 330,16 360,12" fill="none" stroke="#cc7722" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="360" cy="12" r="4" fill="#cc7722"/>
+          <text x="24"  y="104" font-size="8" fill="#a09d98" text-anchor="middle" font-family="DM Sans,sans-serif">Apr 1</text>
+          <text x="108" y="104" font-size="8" fill="#a09d98" text-anchor="middle" font-family="DM Sans,sans-serif">Apr 15</text>
+          <text x="192" y="104" font-size="8" fill="#a09d98" text-anchor="middle" font-family="DM Sans,sans-serif">Apr 29</text>
+          <text x="276" y="104" font-size="8" fill="#a09d98" text-anchor="middle" font-family="DM Sans,sans-serif">May 8</text>
+          <text x="360" y="104" font-size="8" fill="#cc7722" text-anchor="middle" font-family="DM Sans,sans-serif">May 14</text>
+        </svg>
+        <div class="flag-box">
+          <div class="flag-title">Why this flag was raised</div>
+          <div class="flag-row"><span style="color:var(--mid)">Sleep score degraded</span><span class="flag-val">6.8 → 4.1 · ↓ 9d persistence</span></div>
+          <div class="flag-row"><span style="color:var(--mid)">Workload reflections</span><span class="flag-val">"too much work" × 3</span></div>
+          <div class="flag-row"><span style="color:var(--mid)">MLI above baseline</span><span class="flag-val">+12 pts · 14 days</span></div>
+        </div>
+        <div class="sig-stats">
+          <div class="ss"><div class="ss-v">51</div><div class="ss-l">Baseline</div></div>
+          <div class="ss"><div class="ss-v hi">63</div><div class="ss-l">Now</div></div>
+          <div class="ss"><div class="ss-v hi">+12</div><div class="ss-l">Δ 14d</div></div>
+        </div>
+        <div class="sig-badge"><strong>3 days earlier</strong>Detected before the next-session baseline</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT -->
+  <div class="pad">
+    <div class="w">
+      <div class="eyebrow" data-i18n="sol.eyebrow">The solution</div>
+      <h2 class="serif" style="font-size:clamp(34px,3.8vw,52px);margin-bottom:14px" data-i18n-html="sol.h2">One product,<br><em>three honest promises.</em></h2>
+      <p style="font-size:17px;color:var(--mid);font-weight:300;line-height:1.65;max-width:540px;margin-bottom:52px" data-i18n="sol.intro">FlexQ shifts mental health care from episodic treatment to continuous presence. Not a mood tracker. Not a diagnostic tool. A clinical signal layer.</p>
+      <div class="promises">
+        <div class="promise"><div class="p-tag" data-i18n="sol.p1.tag">For patients</div><h3>For you in every moment.</h3><p>60-second daily check-in. Your therapist sees what you choose. Your employer never does. No streaks, no shaming.</p></div>
+        <div class="promise"><div class="p-tag" data-i18n="sol.p2.tag">For therapists</div><h3 data-i18n="sol.p2.h3">Walk into every session already oriented.</h3><p>Triage by change, not score. 90-second pre-session brief. Adapt plans with AI assistance you control and sign off on.</p><button class="p-link" onclick="showPage('therapists')" data-i18n="sol.p2.cta">See the clinical view →</button></div>
+        <div class="promise"><div class="p-tag" data-i18n="sol.p3.tag">For enterprises</div><h3 data-i18n="sol.p3.h3">A leading indicator, not a wellness app.</h3><p>Aggregated, anonymised workforce signal — useful to HR, defensible to regulators, invisible at the individual level.</p><button class="p-link" onclick="showPage('enterprise')" data-i18n="sol.p3.cta">See enterprise reporting →</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW -->
+  <div style="background:var(--white);padding:88px 48px">
+    <div class="w">
+      <div class="eyebrow" data-i18n="how.eyebrow">How it works?</div>
+      <h2 class="serif" style="font-size:clamp(34px,3.8vw,52px);margin-bottom:14px" data-i18n-html="how.h2">Grounded in recognised<br>therapeutic approaches.</h2>
+      <p style="font-size:17px;color:var(--mid);font-weight:300;line-height:1.65;max-width:540px;margin-bottom:52px">Developed in collaboration with CBT and clinical experts. Every flag shows its rule — no black boxes.</p>
+      <div class="how-steps">
+        <div class="step"><div class="step-n" data-i18n="how.s1.n">01 · Capture</div><h3 data-i18n="how.s1.h3">Quick daily check-in</h3><p>60 seconds — mood, energy, stress, sleep, optional reflection. Skipping is safe.</p></div>
+        <div class="step"><div class="step-n" data-i18n="how.s2.n">02 · Compare</div><h3 data-i18n="how.s2.h3">Baseline-relative</h3><p>Patient compared to themselves — not a population norm. Personal baseline, persistence detection.</p></div>
+        <div class="step"><div class="step-n" data-i18n="how.s3.n">03 · Surface</div><h3 data-i18n="how.s3.h3">Make patterns visible</h3><p>Persistent deviations flagged with the rule that <tri></tri>ggered them. Transparent. Inspectable.</p></div>
+        <div class="step"><div class="step-n" data-i18n="how.s4.n">04 · Act</div><h3 data-i18n="how.s4.h3">Therapist-led action</h3><p data-i18n="how.s4.p">Acknowledge, adapt, or dismiss. No autonomous AI care. Full audit trail.</p></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <h2 data-i18n="landing.cta.h2">Intervention before escalation.</h2>
+    <p data-i18n="landing.cta.p">Request a clinical demo and see what changed before the next session.</p>
+    <button class="btn btn-accent" style="font-size:15px;padding:13px 28px" onclick="openContact()">Request a demo</button>
+  </div>
+  <footer>
+    <span>© 2026 FlexQ Health</span>
+    <div style="display:flex;gap:20px"><a href="privacy.html" data-i18n="footer.privacy">Privacy · GDPR / HIPAA</a><a href="team.html" data-i18n="footer.team">The team</a></div>
+  </footer>
+
+<!-- Cookie banner -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use analytics tools to understand how visitors use this site. No personal data is identified.
+    <a href="privacy.html" data-i18n-void>Privacy policy</a>
+  </p>
+  <div class="cb-btns">
+    <button class="cb-decline" onclick="cookieChoice(false)" data-i18n="cookie.decline">Only essential</button>
+    <button class="cb-accept" onclick="cookieChoice(true)" data-i18n="cookie.accept">Accept analytics</button>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lb-overlay" role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <button id="lb-close" onclick="closeLightbox()" aria-label="Close">&#x2715;</button>
+  <img id="lb-img" src="" alt=""/>
+  <div id="lb-screen-wrap"></div>
+</div>
+
+<script src="js/site.js"></script>
 </body>
-
 </html>
