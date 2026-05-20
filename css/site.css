@@ -88,9 +88,10 @@ footer a:hover{color:rgba(255,255,255,.55)}
 .ss-frame img{width:100%;height:auto;display:block}
 
 /* ══════════ LANDING ══════════ */
+.hero-outer{padding:0 48px}
 .hero-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
-  padding:80px 48px 72px;max-width:1100px;margin:0 auto;
+  padding:80px 0 72px;max-width:1100px;margin:0 auto;
 }
 .hero-h1{font-family:'Newsreader',serif;font-size:clamp(48px,5.5vw,70px);font-weight:300;line-height:1.04;margin-bottom:20px}
 .hero-h1 em{font-style:italic;color:var(--accent)}
@@ -211,7 +212,8 @@ footer a:hover{color:rgba(255,255,255,.55)}
 @media(max-width:860px){
   nav{padding:0 20px}
   .hero-grid,.pg-hero,.ent-hero-inner,.why-q-block{grid-template-columns:1fr;gap:36px}
-  .hero-grid,.pg-hero{padding:52px 24px 40px}
+  .hero-outer{padding:0 24px}
+  .hero-grid,.pg-hero{padding:52px 0 40px}
   .pad{padding:56px 24px}
   .why-band,.trust-band,.cta-band,.ent-hero{padding:56px 24px}
   .why-stats,.promises,.how-steps,.g2,.g3,.g4{grid-template-columns:1fr}
